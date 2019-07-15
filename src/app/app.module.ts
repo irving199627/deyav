@@ -2,19 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/share/navbar/navbar.component';
-import { FooterComponent } from './components/share/footer/footer.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagesModule } from './pages/pages.module';
+import { APP_ROUTES } from './app.routes';
+import { ServiceModule } from './services/service.module';
+import { RegistroComponent } from './login/registro.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { TruncatePipe } from './pipes/truncate.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    InicioComponent
+    LoginComponent,
+    RegistroComponent,
+    NotFoundComponent,
+    TruncatePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    PagesModule,
+    APP_ROUTES,
+    ServiceModule,
+    ReactiveFormsModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
